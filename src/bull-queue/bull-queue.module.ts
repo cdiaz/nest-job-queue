@@ -34,7 +34,7 @@ export class BullQueueModule {
       repeat: { cron: '* * * * *', tz: 'Etc/GMT-5' },
       removeOnFail: false
     }).then(job => {
-      this.logger.log(`Job ${job.name} successfully started and will run every second`)
+      this.logger.log(`Job ${job.name} successfully started and will run every minute`)
     });
 
     this.queue.on('completed', (job, result) => {

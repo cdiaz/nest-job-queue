@@ -1,13 +1,15 @@
+import { NestFactory } from '@nestjs/core';
+import { BtcPriceModule } from '../../btcprice/btcprice.module';
+import { BtcPriceService } from '../../btcprice/btcprice.service';
+
 const BtcPriceProcessor = async (job) => {
   
-  /*The typical cases for process functions include database operations and use of another components.
-    What is the best way to call functions from the nest components from here?
-    How do use Dependency Injector?
-    ex: this.btcPriceService.fetch('USD');
-  */
+  const context = await NestFactory.createApplicationContext(BtcPriceModule);
+  const btcPriceService = context.get(BtcPriceService);
 
-  console.log(job.data)
-  return Promise.resolve('success');
+  return await btcPriceService.fetch(job.data.currency)
+    .then(data=> Promise.resolve(data))
+    .catch(err=> Promise.reject(err))
 }
 
 export { BtcPriceProcessor }
