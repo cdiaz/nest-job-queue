@@ -1,10 +1,10 @@
-import { NestFactory } from '@nestjs/core';
+import { ApplicationContext } from '../../app.context';
 import { BtcPriceModule } from '../../btcprice/btcprice.module';
 import { BtcPriceService } from '../../btcprice/btcprice.service';
 
 const BtcPriceProcessor = async (job) => {
   
-  const context = await NestFactory.createApplicationContext(BtcPriceModule);
+  const context = await ApplicationContext();
   const btcPriceService = context.get(BtcPriceService);
 
   return await btcPriceService.fetch(job.data.currency)
