@@ -18,9 +18,9 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@nestjs/common": "^4.5.9",
-    "@nestjs/core": "^4.5.10",
-    "@nestjs/testing": "^4.5.5",
+    "@nestjs/common": "^5.0.0-rc.3",
+    "@nestjs/core": "^5.0.0-rc.3",
+    "@nestjs/testing": "^5.0.0-rc.3",
     "bull": "^3.3.10",
     "dotenv": "^5.0.1",
     "fusedb": "^1.0.8",

@@ -1,8 +1,8 @@
-import { Component } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { BtcPrice } from './btcprice.model';
 import { HttpService } from '@nestjs/common/http';
 
-@Component()
+@Injectable()
 export class BtcPriceService {
 
   constructor(

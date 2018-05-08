@@ -6,6 +6,6 @@ import { BtcPriceController } from './btcprice.controller';
 @Module({
   imports: [HttpModule],
   controllers: [BtcPriceController],
-  components: [BtcPriceService],
+  providers: [BtcPriceService],
 })
 export class BtcPriceModule {}

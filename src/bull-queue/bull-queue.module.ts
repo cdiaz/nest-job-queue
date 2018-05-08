@@ -19,7 +19,7 @@ import 'dotenv/config';
       }],
     })
   ],
-  components: [],
+  providers: [],
   controllers: [],
 })
 export class BullQueueModule {

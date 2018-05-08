@@ -3,7 +3,7 @@ import { FusedbProvider } from './fusedb.provider';
 
 @Global()
 @Module({
-  components: [...FusedbProvider],
+  providers: [...FusedbProvider],
   exports: [...FusedbProvider],
 })
 
